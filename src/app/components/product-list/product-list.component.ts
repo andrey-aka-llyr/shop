@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Product } from '../../models/product.model';
-import { ProductCategory } from '../../models/product-category.enum';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Product } from '../../models';
 
 @Component({
   selector: 'app-product-list',
@@ -9,9 +8,14 @@ import { ProductCategory } from '../../models/product-category.enum';
 })
 export class ProductListComponent implements OnInit {
   @Input() products: Array<Product>;
-  
+  @Output() buy: EventEmitter<Product> = new EventEmitter<Product>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  buyProduct(product) {
+    this.buy.next(product);
   }
 }

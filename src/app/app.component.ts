@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Product } from './models/product.model';
-import { Cart } from './models/cart.model';
-
-import { ProductService } from './services/product.service';
-import { CartService } from './services/cart.service';
+import { Product, Cart } from './models';
+import { ProductService, CartService } from './services';
 
 @Component({
   selector: 'app-root',
@@ -24,5 +21,9 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.products = this.productsService.getProducts();
     this.cart = this.cartService.getCart();
+  }
+
+  buy(product): void {
+    this.cartService.buyProduct(product);
   }
 }

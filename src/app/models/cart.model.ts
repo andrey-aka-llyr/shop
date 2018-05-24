@@ -1,4 +1,4 @@
-import { ProductCartInfo } from './product-cart-info.model';
+import { ProductCartInfo } from '.';
 
 export class Cart {
     public cart: Array<ProductCartInfo>;

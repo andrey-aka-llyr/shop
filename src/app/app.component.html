@@ -4,7 +4,7 @@
 
 <div class='shop-body'>
   <div class='shop-body-list'>
-    <app-product-list [products]="products"></app-product-list>
+    <app-product-list [products]="products" (buy)="buy($event)"></app-product-list>
   </div>
   <div class='shop-body-cart'>
     <app-cart [cart]="cart" *ngIf="!cart.empty; else emptyCart"></app-cart>
