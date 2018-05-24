@@ -1,0 +1,13 @@
+.shop-body
+{
+    display: table;
+    width: 100%;
+}
+.shop-body > div
+{
+    display: table-cell;    
+}
+.shop-body-cart
+{
+    width: 25%;    
+}

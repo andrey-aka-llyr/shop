@@ -1,0 +1,10 @@
+<div class='shop-product'>
+  <div class='shop-product-name'>{{product.name}}</div>
+  <div class='shop-product-description'>{{product.description}}</div>
+  <div class='shop-product-price'>{{product.price}} BYN</div>
+  <div class='shop-product-count'>
+    <span *ngIf="product.isAvailable; else notAvailable">Remained: {{product.count}}</span>
+    <ng-template #notAvailable><span>Not available</span></ng-template>
+  </div>
+  <div *ngIf="product.isAvailable"><button (click)="onBuy()">Buy</button></div>
+</div>
