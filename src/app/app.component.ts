@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
     this.cart = this.cartService.getCart();
   }
 
-  buy(product): void {
+  onBuy(product): void {
     this.cartService.buyProduct(product);
   }
 }

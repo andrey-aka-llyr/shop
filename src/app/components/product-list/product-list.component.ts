@@ -15,7 +15,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
   }
 
-  buyProduct(product) {
+  onBuy(product) {
     this.buy.next(product);
   }
 }
