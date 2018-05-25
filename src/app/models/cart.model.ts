@@ -1,18 +1,18 @@
-import { ProductCartInfo } from '.';
+import { ProductCartInfo } from './product-cart-info.model';
 
 export class Cart {
-    public cart: Array<ProductCartInfo>;
+    public products: Array<ProductCartInfo>;
 
     constructor() {
-        this.cart = [];
+        this.products = [];
     }
 
     public get empty(): boolean {
-        return !this.cart.length;
+        return !this.products.length;
     }
     public get totalPrice(): number {
         let result = 0;
-        this.cart.forEach(x => result += x.price * x.count);
+        this.products.forEach(x => result += x.price * x.count);
         return result;
     }
 }

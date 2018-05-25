@@ -21,17 +21,25 @@ export class CartService {
   }
   buyProduct(product: Product, count?: number)  {
     const realCount = Math.min(count || 1, product.count);
-    product.count -= realCount;
-
     const info = this.getProductInfo(product);
+    product.count -= realCount;
     info.count += realCount;
+  }
+  changeProductCount(info: ProductCartInfo) {
+    const product = this.productService.getProduct(info.id);
+    product.count = info.total - info.count;
+  }
+  deleteProduct(info: ProductCartInfo) {
+    const product = this.productService.getProduct(info.id);
+    product.count = info.total;
+    this.cart.products.splice(this.cart.products.indexOf(info), 1);
   }
 
   private getProductInfo(product: Product) {
-    let result = this.cart.cart.find(x => x.id === product.id);
+    let result = this.cart.products.find(x => x.id === product.id);
     if (!result) {
-      result = new ProductCartInfo(product, 0);
-      this.cart.cart.push(result);
+      result = new ProductCartInfo(product);
+      this.cart.products.push(result);
     }
     return result;
   }

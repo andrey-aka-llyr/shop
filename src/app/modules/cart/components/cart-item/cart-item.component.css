@@ -1,0 +1,26 @@
+.shop-cart-item
+{
+    margin: 20px 0;    
+}
+input
+{
+    margin-left: 10px;
+}
+a
+{
+    font-size: smaller;    
+}
+
+:host.hovered > div
+{
+    background-color: yellow;
+}
+
+.shop-cart-item-name
+{
+    color: green;
+}
+.notAvailable .shop-cart-item-name
+{
+    color: red;    
+}

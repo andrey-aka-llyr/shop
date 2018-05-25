@@ -1,0 +1,11 @@
+<div class="shop-cart">
+  <h3>Cart</h3>
+  <div class="shop-cart-body">
+    <div class="shop-cart-total">Total: {{cart.totalPrice}} BYN</div>
+    <app-cart-item-list 
+      [products]="cart.products"
+      (productCountChanged)="onProductCountChanged($event)"
+      (productDeleted)="onProductDeleted($event)">      
+    </app-cart-item-list>    
+  </div>
+</div>

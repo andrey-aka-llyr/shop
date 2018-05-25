@@ -4,7 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## 1.0.0 - 2018-05-25
+## 1.1.0 - 2018-05-25
+### Added
+- Cart item operations (change count, delete)
+- Visual effects (cart item hover, availability via name color)
+
+### Changed
+- Component structure (separation on modules)
+
+## 1.0.0 - 2018-05-24
 ### Added
 - Shop project
 - Product display
