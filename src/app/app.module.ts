@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ProductModule, CartModule } from './modules';
+import { ProductModule, CartModule, CoreModule } from './modules';
 
 import { AppComponent } from './app.component';
 
@@ -11,7 +11,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     ProductModule,
-    CartModule
+    CartModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

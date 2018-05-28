@@ -15,6 +15,16 @@ export class CartComponent implements OnInit {
   ngOnInit() {
   }
 
+  getTotalCount(): number {
+    return this.cartService.totalProductCount;
+  }
+  getTotalPrice(): number {
+    return this.cartService.totalPrice;
+  }
+  clear() {
+    this.cartService.clear();
+  }
+
   onProductCountChanged(product) {
     this.cartService.changeProductCount(product);
   }

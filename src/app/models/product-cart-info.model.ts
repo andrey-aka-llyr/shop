@@ -1,10 +1,10 @@
 import { Product } from './product.model';
 
 export class ProductCartInfo {
-    public id: number;
-    public name: string;
-    public price: number;
-    public total: number;
+    id: number;
+    name: string;
+    price: number;
+    total: number;
 
     constructor(
         product: Product,
@@ -17,7 +17,7 @@ export class ProductCartInfo {
         this.count = (count !== undefined) ? count : 0;
     }
 
-    public get notAvailable(): boolean {
+    get notAvailable(): boolean {
         return this.count >= this.total;
     }
 }

@@ -1,7 +1,10 @@
 <div class="shop-cart">
   <h3>Cart</h3>
   <div class="shop-cart-body">
-    <div class="shop-cart-total">Total: {{cart.totalPrice}} BYN</div>
+    <div class="shop-cart-total">
+      <span>Contains {{getTotalCount()}} product(s) with total price {{getTotalPrice()}} BYN</span>
+      <button (click)="clear()">Clear</button>
+    </div>
     <app-cart-item-list 
       [products]="cart.products"
       (productCountChanged)="onProductCountChanged($event)"
