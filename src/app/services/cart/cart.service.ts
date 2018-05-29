@@ -23,7 +23,7 @@ export class CartService {
   }
   get totalPrice(): number {
     let result = 0;
-    this.cart.products.forEach(x => result += x.price * x.count);
+    this.cart.products.forEach(x => result += x.totalPrice);
     return result;
   }
 

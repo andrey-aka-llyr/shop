@@ -20,4 +20,7 @@ export class ProductCartInfo {
     get notAvailable(): boolean {
         return this.count >= this.total;
     }
+    get totalPrice(): number {
+        return this.price * this.count;
+    }
 }

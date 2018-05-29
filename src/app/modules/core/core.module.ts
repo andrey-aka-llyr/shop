@@ -10,6 +10,7 @@ import {
  } from '../../services';
 import { CoreDemoComponent } from './components';
 import { SelectorDirective } from './directives';
+import { CategoryDisplayPipe } from './pipes';
 
 const appInfo = new ConstantsService();
 
@@ -18,7 +19,8 @@ const appInfo = new ConstantsService();
     CommonModule
   ],
   exports: [
-    CoreDemoComponent
+    CoreDemoComponent/*,
+    CategoryDisplayPipe*/
   ],
   providers: [
     LocalStorageService,
@@ -26,6 +28,6 @@ const appInfo = new ConstantsService();
     { provide: ConstantsService, useValue: appInfo },
     { provide: GENERATOR, useFactory: GeneratorFactory(10), deps: [GeneratorService] }
   ],
-  declarations: [CoreDemoComponent, SelectorDirective]
+  declarations: [CoreDemoComponent, SelectorDirective/*, CategoryDisplayPipe*/]
 })
 export class CoreModule { }

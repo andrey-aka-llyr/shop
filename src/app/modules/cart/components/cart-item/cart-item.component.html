@@ -1,5 +1,6 @@
 <div class="shop-cart-item" [ngClass]="{'notAvailable': product.notAvailable}">
   <div class="shop-cart-item-name">{{product.name}}</div>
+  <div class="shop-cart-item-price">Total price: {{product.totalPrice | currency}}</div>
   <div class="shop-cart-item-count">
     <span>Count:</span>
     <input #count type="number" min="1" max="{{product.total}}" value="{{product.count}}" (change)="onCountChanged()" />

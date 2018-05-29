@@ -14,8 +14,9 @@ export class ProductService {
 
   constructor() { }
 
-  getProducts(category?: ProductCategory): Array<Product> {
-    return category ? this.products.filter(x => x.category === category) : this.products;
+  getProducts(category?: ProductCategory): Promise<Product[]> {
+    const items = category ? this.products.filter(x => x.category === category) : this.products;
+    return Promise.resolve(items);
   }
   getProduct(id: number): Product {
     return this.products.find(x => x.id === id);
