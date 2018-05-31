@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { ToolkitModule } from '../toolkit/toolkit.module';
-import { ProductComponent, ProductListComponent } from './components';
+import { ProductRoutingModule } from './product-routing.module';
+import { ProductComponent, ProductListComponent, ProductsComponent } from './components';
 
 @NgModule({
   imports: [
     CommonModule,
-    ToolkitModule
+    ToolkitModule,
+    ProductRoutingModule
   ],
   declarations: [
     ProductComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductsComponent
   ],
   exports: [
-    ProductListComponent
   ]
 })
 export class ProductModule { }

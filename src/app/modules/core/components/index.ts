@@ -1,1 +1,1 @@
-// export * from './core-demo/core-demo.component';
+export * from './not-found/not-found.component';

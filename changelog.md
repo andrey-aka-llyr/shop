@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## 1.4.0 - 2018-05-31
 ### Added
+- Navigation menu
 
 ### Changed
 - Core Demo component moved to Demo module

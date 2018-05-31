@@ -1,5 +1,11 @@
-.shop-navigation a
+.shop-navigation
 {
+    margin-bottom: 20px;
+}
+.shop-navigation a,
+.shop-navigation a:visited
+{
+    color: blue;
     text-decoration: none;
     font-weight: bold;
     margin-right: 20px;
@@ -7,18 +13,4 @@
 .shop-navigation a.active
 {
     text-decoration: underline;
-}
-
-.shop-body
-{
-    display: table;
-    width: 100%;
-}
-.shop-body > div
-{
-    display: table-cell;    
-}
-.shop-body-demo
-{
-    width: 25%;    
 }

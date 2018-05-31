@@ -3,18 +3,18 @@
 </div>
 
 <div class='shop-navigation'>
-  <a href='#'>Goods</a>
-  <a href='#'>Cart</a>
+  <a routerLink="/goods" routerLinkActive="active">Goods</a>
+  <a routerLink="/cart" routerLinkActive="active">Cart</a>
+  <a routerLink="/demo" routerLinkActive="active">Demo</a>
 </div>
 
 <div class='shop-body'>
-  <div class='shop-body-main'>
-    <app-product-list [products]="products | async" (buy)="onBuy($event)"></app-product-list>
-  </div>
+  <router-outlet></router-outlet>
+  <!--app-product-list [products]="products | async" (buy)="onBuy($event)"></app-product-list>
   <div class='shop-body-demo'>
       <app-core-demo></app-core-demo>
   </div>
-  <!--div class='shop-body-cart'>
+  <div class='shop-body-cart'>
     <app-cart [cart]="cart" *ngIf="!cart.empty; else emptyCart"></app-cart>
     <ng-template #emptyCart>Haven't chosen any goods yet? Oh, come on!</ng-template>
   </div-->
