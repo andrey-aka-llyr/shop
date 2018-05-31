@@ -16,6 +16,9 @@ export class CartService {
   getCart(): Cart {
     return this.cart;
   }
+  getCartItem(id: number): ProductCartInfo {
+    return this.cart.products.find(x => x.id === id);
+  }
   get totalProductCount(): number {
     let result = 0;
     this.cart.products.forEach(x => result += x.count);
@@ -49,7 +52,7 @@ export class CartService {
   }
 
   private getProductInfo(product: Product) {
-    let result = this.cart.products.find(x => x.id === product.id);
+    let result = this.getCartItem(product.id);
     if (!result) {
       result = new ProductCartInfo(product);
       this.cart.products.push(result);

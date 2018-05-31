@@ -1,0 +1,22 @@
+<h4>Set product count</h4>
+<div *ngIf="info">
+  <div>{{info.name}}</div>
+  <div>Total price: {{info.totalPrice | currency}}</div>
+
+  <form (ngSubmit)="onBuy()" id="user-form" #form="ngForm">
+    <div>
+      <label for="count">Count</label>
+      <input type="number" 
+          min="1" 
+          max="{{info.total}}"
+          id="count" 
+          name="count"
+          placeholder="Count"
+          required
+          [(ngModel)]="info.count">
+    </div>
+    <button type="submit" [disabled]="form.invalid">Save</button>
+    <button type="button" (click)="onBack()">Back</button>
+  </form>
+</div>
+
