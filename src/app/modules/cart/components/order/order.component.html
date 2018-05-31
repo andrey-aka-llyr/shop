@@ -1,0 +1,20 @@
+<div class="shop-cart-order">
+  <div class="shop-cart-total">
+    <span>Contains {{getTotalCount()}} product(s) with total price {{getTotalPrice() | currency}}</span>
+    <button (click)="clear()">Clear</button>
+  </div>
+  <div class="shop-cart-filter">
+    Sort items by
+    <select #sortBy (change)="currentProperty = sortBy.value">
+      <option *ngFor='let property of sortableProperties' value='{{property.value}}'>{{property.name}}</option>
+    </select>
+    <select #sortOrder (change)="currentDirection = sortOrder.value == 'true'">
+      <option *ngFor='let order of sortDirections' value='{{order.value}}'>{{order.name}}</option>
+    </select>      
+  </div>
+  <app-cart-item-list 
+    [products]="getProducts()"
+    (productCountChanged)="onProductCountChanged($event)"
+    (productDeleted)="onProductDeleted($event)">      
+  </app-cart-item-list>    
+</div>  

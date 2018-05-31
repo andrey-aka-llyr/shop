@@ -1,20 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { ToolkitModule } from '../toolkit/toolkit.module';
-import { CartComponent, CartItemComponent, CartItemListComponent } from './components';
+import { CartRoutingModule } from './cart-routing.module';
+import { CartComponent } from './cart.component';
+import { CartItemComponent, CartItemListComponent } from './components';
+import { OrderComponent } from './components/order/order.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    ToolkitModule
+    ToolkitModule,
+    CartRoutingModule
   ],
   declarations: [
     CartComponent,
     CartItemComponent,
-    CartItemListComponent
+    CartItemListComponent,
+    OrderComponent
   ],
   exports: [
-    CartComponent
   ]
 })
 export class CartModule { }

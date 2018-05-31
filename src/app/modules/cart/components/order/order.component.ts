@@ -1,15 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 import { Cart, ProductCartInfo, NamedEntity } from '../../../../models';
 import { CartService } from '../../../../services';
 import { OrderByPipe } from '../../../toolkit/pipes';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css'],
+  selector: 'app-order',
+  templateUrl: './order.component.html',
+  styleUrls: ['./order.component.css'],
   providers: [OrderByPipe]
 })
-export class CartComponent implements OnInit {
+export class OrderComponent implements OnInit {
+  cart: Cart;
+
   sortableProperties = [
     new NamedEntity('Name', 'name'),
     new NamedEntity('Count', 'count'),
@@ -22,8 +25,6 @@ export class CartComponent implements OnInit {
   ];
   currentDirection = this.sortDirections[0].value;
 
-  @Input() cart: Cart;
-
   constructor(
     private cartService: CartService,
     private orderByPipe: OrderByPipe
@@ -31,6 +32,7 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.cart = this.cartService.getCart();
   }
 
   getProducts(): Array<ProductCartInfo> {

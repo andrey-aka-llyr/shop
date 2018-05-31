@@ -6,6 +6,6 @@
     <input #count type="number" min="1" max="{{product.total}}" value="{{product.count}}" (change)="onCountChanged()" />
   </div>
   <div class="shop-cart-item-delete">
-    <a href="#" (click)="onDelete()">delete</a>
+    <button (click)="onDelete()">Delete</button>
   </div>
 </div>
