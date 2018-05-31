@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import {
-  LocalStorageService,
   ConfigOptionsService,
   ConstantsService,
   GENERATOR,
@@ -21,7 +20,6 @@ const appInfo = new ConstantsService();
   declarations: [CoreDemoComponent, SelectorDirective],
   exports: [CoreDemoComponent, SelectorDirective],
   providers: [
-    LocalStorageService,
     ConfigOptionsService,
     { provide: ConstantsService, useValue: appInfo },
     { provide: GENERATOR, useFactory: GeneratorFactory(10), deps: [GeneratorService] }

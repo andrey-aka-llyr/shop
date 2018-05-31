@@ -1,3 +1,8 @@
+.shop-body
+{
+    position: relative;
+}
+
 .shop-navigation
 {
     margin-bottom: 20px;
@@ -13,4 +18,16 @@
 .shop-navigation a.active
 {
     text-decoration: underline;
+}
+.shop-navigation button
+{
+    float: right;
+}
+
+.shop-comments
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 200px;
 }

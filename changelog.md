@@ -7,10 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## 1.4.0 - 2018-05-31
 ### Added
 - Navigation menu
+- Routing
+- Cart Item Count form (for buying products / changing count)
+- Comments (via secondary router oulet)
 
 ### Changed
 - Core Demo component moved to Demo module
 - Single product query (via promise)
+- Product module transformed to feature module (with routing)
+- Cart module transformed to feature module (with nested routing)
 
 ## 1.3.0 - 2018-05-29
 ### Added

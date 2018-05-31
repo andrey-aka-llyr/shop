@@ -1,0 +1,24 @@
+.shop-comments
+{
+    position: relative;
+}
+.shop-comments > button
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.shop-comments-list
+{
+    margin-top: 20px;
+}
+.shop-comment
+{
+    margin-bottom: 15px;
+}
+.shop-comment-author
+{
+    font-size: smaller;
+    font-style: italic;
+}

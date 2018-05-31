@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { ProductCartInfo, Product } from '../../../../models';
 import { ProductService, CartService } from '../../../../services';
@@ -17,7 +18,7 @@ export class CartItemCountComponent implements OnInit {
     private cartService: CartService,
     private productService: ProductService,
     private route: ActivatedRoute,
-    private router: Router
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -40,6 +41,6 @@ export class CartItemCountComponent implements OnInit {
     this.onBack();
   }
   onBack() {
-    this.router.navigate(this.product ? [''] : ['cart']);
+    this.location.back();
   }
 }

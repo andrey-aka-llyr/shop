@@ -1,15 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
-import { NotFoundComponent } from './components';
-import { ProductService, CartService } from '../../services';
+import { NotFoundComponent, CommentsComponent } from './components';
+import {
+  ProductService,
+  CartService,
+  CommentService,
+  LocalStorageService
+} from '../../services';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
-  exports: [NotFoundComponent],
-  declarations: [NotFoundComponent],
-  providers: [ProductService, CartService]
+  exports: [NotFoundComponent, CommentsComponent],
+  declarations: [NotFoundComponent, CommentsComponent],
+  providers: [
+    ProductService,
+    CartService,
+    CommentService,
+    LocalStorageService
+  ]
 })
 export class CoreModule { }
