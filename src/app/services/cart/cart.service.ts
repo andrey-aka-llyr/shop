@@ -34,8 +34,10 @@ export class CartService {
     info.count += realCount;
   }
   changeProductCount(info: ProductCartInfo) {
-    const product = this.productService.getProduct(info.id);
-    product.count = info.total - info.count;
+    this.productService.getProduct(info.id).then(product => {
+      product.count = info.total - info.count;
+      this.productService.updateProduct(product);
+    });
   }
   deleteProduct(info: ProductCartInfo) {
     this.restoreProductCount(info);
@@ -55,7 +57,7 @@ export class CartService {
     return result;
   }
   private restoreProductCount(info: ProductCartInfo) {
-    const product = this.productService.getProduct(info.id);
-    product.count = info.total;
+    info.count = 0;
+    this.changeProductCount(info);
   }
 }

@@ -18,7 +18,25 @@ export class ProductService {
     const items = category ? this.products.filter(x => x.category === category) : this.products;
     return Promise.resolve(items);
   }
-  getProduct(id: number): Product {
-    return this.products.find(x => x.id === id);
+  getProduct(id: number): Promise<Product> {
+    return Promise.resolve(this.products.find(x => x.id === id));
+  }
+
+  createProduct(product: Product): void {
+    product.id = this.generateId();
+    this.products.push(product);
+  }
+  updateProduct(product: Product): void {
+    const existing = this.products.find(x => x.id === product.id);
+    if (existing) {
+      const index = this.products.indexOf(existing);
+      this.products.splice(index, 1, product);
+    }
+  }
+
+  private generateId(): number {
+    let result = 0;
+    this.products.forEach(x => result = Math.max(result, x.id));
+    return result + 1;
   }
 }

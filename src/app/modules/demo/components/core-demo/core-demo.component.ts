@@ -30,6 +30,9 @@ export class CoreDemoComponent implements OnInit {
     console.log(data);
     this.storageService.setItem(data, data);
   }
+  clearStorage() {
+    this.storageService.clearStorage();
+  }
 
   get title(): string {
     return this.constantsService.title;

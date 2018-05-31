@@ -1,3 +1,14 @@
+.shop-navigation a
+{
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.shop-navigation a.active
+{
+    text-decoration: underline;
+}
+
 .shop-body
 {
     display: table;
@@ -7,7 +18,7 @@
 {
     display: table-cell;    
 }
-.shop-body-cart
+.shop-body-demo
 {
     width: 25%;    
 }
