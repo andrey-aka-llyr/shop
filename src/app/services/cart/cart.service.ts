@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { Product, ProductCartInfo, Cart } from '../../models';
 import { ProductService } from '../product/product.service';
@@ -8,9 +9,11 @@ import { ProductService } from '../product/product.service';
 })
 export class CartService {
   private cart: Cart;
+  private sub: Subscription;
 
   constructor(private productService: ProductService) {
     this.cart = new Cart();
+    this.sub = productService.update$.subscribe(product => this.updateProductInfo(product));
   }
 
   getCart(): Cart {
@@ -62,5 +65,12 @@ export class CartService {
   private restoreProductCount(info: ProductCartInfo) {
     info.count = 0;
     this.changeProductCount(info);
+  }
+  private updateProductInfo(product: Product) {
+    const info = this.getCartItem(product.id);
+    if (info) {
+      info.name = product.name;
+      info.total = product.count + info.count;
+    }
   }
 }

@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
     ProductModule,
     CartModule,
     DemoModule,
-    AdminModule, // TODO make lazy
+    AdminModule, // TODO make lazy (current sample works only via ng serve --aot)
     AppRoutingModule
   ],
   providers: [],
