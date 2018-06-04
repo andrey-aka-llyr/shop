@@ -4,16 +4,20 @@
   <div>Total price: {{info.totalPrice | currency}}</div>
 
   <form (ngSubmit)="onBuy()" id="user-form" #form="ngForm">
-    <div>
-      <label for="count">Count</label>
-      <input type="number" 
-          min="1" 
-          max="{{info.total}}"
-          id="count" 
-          name="count"
-          placeholder="Count"
-          required
-          [(ngModel)]="info.count">
+    <div class='shop-form'>
+      <div class='shop-form-row'>
+        <div><label for="count">Count</label></div>
+        <div>
+          <input type="number" 
+              min="1" 
+              max="{{info.total}}"
+              id="count" 
+              name="count"
+              placeholder="Count"
+              required
+              [(ngModel)]="info.count" />
+        </div>
+      </div>
     </div>
     <div class='actions'>
       <button type="submit" [disabled]="form.invalid">Save</button>

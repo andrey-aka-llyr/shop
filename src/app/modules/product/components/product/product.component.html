@@ -4,8 +4,8 @@
   <div class='shop-product-category'>Category: {{product.category | categoryDisplay | uppercase}}</div>
   <div class='shop-product-price'>Price: {{product.price | currency}}</div>
   <div class='shop-product-count'>
-    <span *ngIf="product.isAvailable; else notAvailable">Remained: {{product.count}}</span>
+    <span *ngIf="productAvailable(product); else notAvailable">Remained: {{product.count}}</span>
     <ng-template #notAvailable><span>Not available</span></ng-template>
   </div>
-  <div *ngIf="product.isAvailable"><button (click)="onBuy()">Buy</button></div>
+  <div *ngIf="productAvailable(product)"><button (click)="onBuy()">Buy</button></div>
 </div>

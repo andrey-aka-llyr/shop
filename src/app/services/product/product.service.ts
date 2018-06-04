@@ -12,7 +12,9 @@ export class ProductService {
     new Product(4, 'Upyachka', 'Pystch-pystch!', 15.19)
   ];
 
-  constructor() { }
+  constructor() {
+    console.log('Product service constructed');
+  }
 
   getProducts(category?: ProductCategory): Promise<Product[]> {
     const items = category ? this.products.filter(x => x.category === category) : this.products;
@@ -21,16 +23,26 @@ export class ProductService {
   getProduct(id: number): Promise<Product> {
     return Promise.resolve(this.products.find(x => x.id === id));
   }
+  productAvailable(product: Product): boolean {
+    return product.count > 0;
+  }
 
   createProduct(product: Product): void {
     product.id = this.generateId();
     this.products.push(product);
   }
-  updateProduct(product: Product): void {
+  updateProduct(product: Product): void { // TODO perform Cart service notification
     const existing = this.products.find(x => x.id === product.id);
     if (existing) {
       const index = this.products.indexOf(existing);
       this.products.splice(index, 1, product);
+    }
+  }
+  deleteProduct(product: Product): void {
+    const existing = this.products.find(x => x.id === product.id);
+    if (existing) {
+      const index = this.products.indexOf(existing);
+      this.products.splice(index, 1);
     }
   }
 

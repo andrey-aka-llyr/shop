@@ -1,7 +1,36 @@
-label
+.shop-form
+{
+    display: table;
+}
+.shop-form-row
+{
+    display: table-row;
+}
+.shop-form-row > div
+{
+    display: table-cell;
+    padding: 5px 0;
+    vertical-align: middle;
+}
+.shop-form input[type='text'],
+.shop-form select,
+.shop-form textarea
+{
+    width: 250px;
+}
+.shop-form input[type='number']
+{
+    width: 100px;
+}
+.shop-form textarea
+{
+    min-height: 60px;
+}
+.shop-form label
 {
     margin-right: 10px;
 }
+
 .actions button
 {
     margin: 10px 10px 0 0;

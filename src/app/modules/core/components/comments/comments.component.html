@@ -3,27 +3,33 @@
   <h3>Comments</h3>
   <div class='shop-comments-new'>
     <form (ngSubmit)="onAddComment()" id="comment-form" #form="ngForm">
-        <div>
-          <textarea 
-              id="text" 
-              name="text"
-              placeholder="Comment"
-              required
-              [(ngModel)]="comment.text"></textarea>
+      <div class='shop-form'>
+        <div class='shop-form-row'>
+          <div>
+              <textarea 
+                  id="text" 
+                  name="text"
+                  placeholder="Comment"
+                  required
+                  [(ngModel)]="comment.text"></textarea>
+            </div>          
         </div>
-        <div>
-            <input
-                type="text" 
-                id="author" 
-                name="author"
-                placeholder="Author"
-                required
-                [(ngModel)]="comment.author" />
-          </div>        
-        <div class='actions'>
-          <button type="submit" [disabled]="form.invalid">Save</button>
+        <div class='shop-form-row'>
+          <div>
+              <input
+                  type="text" 
+                  id="author" 
+                  name="author"
+                  placeholder="Author"
+                  required
+                  [(ngModel)]="comment.author" />
+            </div> 
         </div>
-      </form>    
+      </div>
+      <div class='actions'>
+        <button type="submit" [disabled]="form.invalid">Save</button>
+      </div>
+    </form>    
   </div>
   <div class='shop-comments-list'>
     <div class='shop-comment' *ngFor='let item of comments'>

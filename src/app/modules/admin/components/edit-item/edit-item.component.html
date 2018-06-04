@@ -1,0 +1,74 @@
+<h4>
+  <span *ngIf='creation; else editing'>Create product</span>
+  <ng-template #editing>Edit product</ng-template>
+</h4>
+<div *ngIf="product">
+  <form (ngSubmit)="onSave()" id="item-form" #form="ngForm">
+    <div class='shop-form'>
+      <div class='shop-form-row'>
+        <div><label for="name">Name</label></div>
+        <div>
+          <input type="text" 
+            id="name" 
+            name="name"
+            placeholder="Name"
+            required
+            [(ngModel)]="product.name" />
+        </div>
+      </div>
+      <div class='shop-form-row'>
+        <div><label for="name">Description</label></div>
+        <div>
+          <textarea 
+            id="description" 
+            name="description"
+            placeholder="Description"
+            required
+            [(ngModel)]="product.description"></textarea>
+        </div>
+      </div>
+      <div class='shop-form-row'>
+          <div><label for="category">Category</label></div>
+          <div>
+            <select 
+              id="category" 
+              name="category"
+              [(ngModel)]="product.category">
+              <option 
+                *ngFor='let category of getCategoryOptions()' 
+                [selected]="category.value === product.category" 
+                value='{{category.value}}'>
+                {{category.name}}</option>
+            </select>
+          </div>
+        </div>              
+      <div class='shop-form-row'>
+        <div><label for="price">Price</label></div>
+        <div>
+          <input type="number" 
+            min="0.01"
+            id="price" 
+            name="price"
+            placeholder="Price"
+            required
+            [(ngModel)]="product.price" />
+        </div>
+      </div>
+      <div class='shop-form-row'>
+        <div><label for="price">Count</label></div>
+        <div>
+          <input type="number" 
+            min="1"
+            id="count" 
+            name="count"
+            placeholder="Count"
+            [(ngModel)]="product.count" />
+        </div>
+      </div>
+    </div>    
+    <div class='actions'>
+      <button type="submit" [disabled]="form.invalid">Save</button>
+      <button type="button" (click)="onBack()">Back</button>
+    </div>
+  </form>
+</div>

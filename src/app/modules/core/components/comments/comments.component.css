@@ -22,3 +22,10 @@
     font-size: smaller;
     font-style: italic;
 }
+
+.shop-form input[type='text'],
+.shop-form select,
+.shop-form textarea
+{
+    width: 150px;
+}

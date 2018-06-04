@@ -12,8 +12,4 @@ export class Product {
         this.category = category || ProductCategory.Undefined;
         this.count = (count !== undefined) ? count : 0;
     }
-
-    get isAvailable(): boolean {
-        return this.count > 0;
-    }
 }

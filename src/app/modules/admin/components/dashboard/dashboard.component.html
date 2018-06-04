@@ -1,0 +1,10 @@
+<h4>Dashboard</h4>
+<div class='shop-admin-new'>
+  <a routerLink='/admin/new'>Create new product</a>
+</div>
+<app-dashboard-item 
+  *ngFor='let product of products | async'
+  [product]='product'
+  (edit)='onEdit($event)'
+  (delete)='onDelete($event)'>
+</app-dashboard-item>

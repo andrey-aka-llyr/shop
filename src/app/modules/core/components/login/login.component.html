@@ -1,0 +1,10 @@
+<div class='shop-login'>
+  <h3>Login</h3>
+  <div>Status: {{getStatus()}}</div>
+  <div class='actions'>
+    <button *ngIf='authenticated(); else signedOut' (click)='onLogout()'>Sign Out</button>
+    <ng-template #signedOut>
+      <button (click)='onLogin()'>Sign In</button>
+    </ng-template>
+  </div>
+</div>
